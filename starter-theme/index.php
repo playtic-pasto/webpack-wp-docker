@@ -29,6 +29,12 @@ get_header();
         <?php
       endif;
 
+      If(wp_get_environment_type() === 'development') {
+        echo "is development";
+      } else {
+        echo "is production";
+      }
+
       /* Start the Loop */
       while ( have_posts() ) :
         the_post();

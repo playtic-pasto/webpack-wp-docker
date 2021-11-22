@@ -1,1 +1,13 @@
 @import 'normalize';
+
+body {
+  background-color: white;
+  &.developmet-mode {
+    background-color: rgb(255, 208, 208);
+  };
+
+  h1, h2 {
+    color: green;
+    font-size: 53px;
+  }
+}

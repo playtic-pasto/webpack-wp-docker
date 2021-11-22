@@ -21,6 +21,8 @@ function starter_theme_body_classes( $classes ) {
   if ( ! is_active_sidebar( 'sidebar-1' ) ) {
     $classes[] = 'no-sidebar';
   }
+  
+  $classes[] =  wp_get_environment_type() === 'development' ? 'developmet-mode' : 'production-mode';
 
   return $classes;
 }
