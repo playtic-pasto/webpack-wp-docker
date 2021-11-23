@@ -1,39 +1,47 @@
-version: '3'
-
+version: '3.1'
 services:
   wp:
-    image: ${WP_VERSION} # https://hub.docker.com/_/wordpress/
+    image: wordpress:${WP_VERSION} # https://hub.docker.com/_/wordpress/
     ports:
       - 127.0.0.1:80:80 # change ip if required
+    env_file:
+      - .env
+    restart: always
     volumes:
-      - ./config/php.conf.uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      - ./wp-app:/var/www/html/wp-includes # Full wordpress project
-      - ./wp-app/wp-config.php:/var/www/html/wp-config.php # Full wordpress project
+      - ./wp-app/:/var/www/html/ # Full wordpress project
       - ./starter-theme/:/var/www/html/wp-content/themes/starter-theme # Theme development
-      - ./src/themes/:/var/www/html/wp-content/themes
       - ./src/plugins/:/var/www/html/wp-content/plugins
       - ./src/uploads/:/var/www/html/wp-content/uploads
     environment:
-      WORDPRESS_DB_HOST: ${MYSQL_HOST}
+      WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+    hostname: 127.0.0.1:80
     depends_on:
       - db
+    networks: 
+      - web-networks 
 
   wpcli:
     image: wordpress:cli
+    restart: always
     user: xfs
     volumes:
       - ./wp-app:/var/www/html
     depends_on:
       - db
       - wp
+    networks: 
+      - web-networks 
 
   db:
-    image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    image: mysql:latest # https://hub.docker.com/_/mysql/ 
+    restart: always
     ports:
       - 127.0.0.1:3306:3306 # change ip if required
+    env_file:
+      - .env
     command: [
         '--default_authentication_plugin=mysql_native_password',
         '--character-set-server=utf8mb4',
@@ -46,13 +54,15 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     networks: 
-    - web-networks 
+      - web-networks  
 
   phpmyadmin:
     image: phpmyadmin
     restart: always
+    env_file:
+      - .env
     environment:
-      - PMA_HOST=${MYSQL_HOST}
+      - PMA_HOST=db
       - PMA_PMADB=${MYSQL_DATABASE}
       - PMA_USER=${DB_USER}
       - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
@@ -65,3 +75,7 @@ services:
       - web-networks 
 volumes:
   db_data:
+
+networks: 
+  web-networks:
+    name: web-networks

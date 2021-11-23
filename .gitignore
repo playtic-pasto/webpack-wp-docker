@@ -5,3 +5,8 @@ config/
 **/node_modules/
 **/dist/
 **/package-lock.json
+!./wp-app/wp-config.php
+
+src/themes/twentynineteen
+src/themes/twentytwenty
+src/themes/twentytwentyone

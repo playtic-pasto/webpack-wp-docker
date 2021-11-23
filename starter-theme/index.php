@@ -18,6 +18,21 @@ get_header();
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
 
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <h2>Hola</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est animi veritatis nemo itaque ab? Animi, soluta excepturi. Officiis voluptates neque magnam deserunt optio fugiat voluptatem praesentium doloribus iste ipsam?</p>
+          </div>
+          <div class="col-12 col-md-6">
+            <h2>Hola</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est animi veritatis nemo itaque ab? Animi, soluta excepturi. Officiis voluptates neque magnam deserunt optio fugiat voluptatem praesentium doloribus iste ipsam?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <?php
     if ( have_posts() ) :
 
