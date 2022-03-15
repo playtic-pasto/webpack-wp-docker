@@ -5,13 +5,13 @@
 
     // ADD OPTION PAGE
     acf_add_options_page(array(
-      'page_title' 	  => 'General Settings',
-      'menu_title'	  => 'Settings',
-      'menu_slug' 	  => 'general-settings',
+      'page_title' 	  => 'PlayTIC Configuración',
+      'menu_title'	  => 'PlayTIC Configuración',
+      'menu_slug' 	  => 'playtic-settings',
       'capability'	  => 'edit_posts',
       'icon_url'      => 'dashicons-superhero',
-      'update_button' => __('Update  theme', 'acf'),
-      'position'      => 50,
+      'update_button' => __('Actualizar Tema', 'acf'),
+      'position'      => 1,
       'autoload'      => true,
       'redirect'	    => false
     ));
@@ -19,26 +19,20 @@
     acf_add_options_sub_page(array(
       'page_title'    => 'Header Settings',
       'menu_title'	  => 'Header',
-      'parent_slug'	  => 'general-settings',
+      'parent_slug'	  => 'playtic-settings',
     ));
     
     acf_add_options_sub_page(array(
       'page_title' 	  => 'Footer Settings',
       'menu_title'	  => 'Footer',
-      'parent_slug'	  => 'general-settings',
+      'parent_slug'	  => 'playtic-settings',
     ));  
 
     acf_add_options_sub_page(array(
-      'page_title' 	  => '404 Page Settings',
+      'page_title' 	  => '404 Settings',
       'menu_title'	  => '404 Page',
-      'parent_slug'	  => 'general-settings',
+      'parent_slug'	  => 'playtic-settings',
     ));  
-
-    acf_add_options_sub_page(array(
-      'page_title' 	  => 'CPT Page Builder',
-      'menu_title'	  => 'Page Builder CPT',
-      'parent_slug'	  => 'edit.php?post_type=',
-    )); 
 
   }
 ?>
