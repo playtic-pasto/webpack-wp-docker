@@ -1,8 +1,10 @@
+$playtic_bg : #fff;
 
 body {
-  background-color: purple;
+  background-color: $playtic_bg;
   &.developmet-mode {
-    background-color: rgba(255, 208, 208,0.5);
+    //$playtic_bg : rgb(15, 13, 27);
+    background-color: $playtic_bg;
   };
 
   h1, h2 {

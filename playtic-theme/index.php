@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -15,65 +16,61 @@
 get_header();
 ?>
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main">
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
 
     <section class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-6">
-            <h2>Hola</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est animi veritatis nemo itaque ab? Animi, soluta excepturi. Officiis voluptates neque magnam deserunt optio fugiat voluptatem praesentium doloribus iste ipsam?</p>
-          </div>
-          <div class="col-12 col-md-6">
-            <h2>Hola</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est animi veritatis nemo itaque ab? Animi, soluta excepturi. Officiis voluptates neque magnam deserunt optio fugiat voluptatem praesentium doloribus iste ipsam?</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="col-12">
+            <?php
+            if (have_posts()) :
 
-    <?php
-    if ( have_posts() ) :
+              if (is_home() && !is_front_page()) :
+            ?>
+                <header>
+                  <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                </header>
+            <?php
+              endif;
 
-      if ( is_home() && ! is_front_page() ) :
-        ?>
-        <header>
-          <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-        </header>
-        <?php
-      endif;
+              if (wp_get_environment_type() === 'development') {
+                echo "is development";
+              } else {
+                echo "is production";
+              }
 
-      If(wp_get_environment_type() === 'development') {
-        echo "is development";
-      } else {
-        echo "is production";
-      }
+              /* Start the Loop */
+              while (have_posts()) :
+                the_post();
 
-      /* Start the Loop */
-      while ( have_posts() ) :
-        the_post();
-
-        /*
+                /*
          * Include the Post-Type-specific template for the content.
          * If you want to override this in a child theme, then include a file
          * called content-___.php (where ___ is the Post Type name) and that will be used instead.
          */
-        get_template_part( 'template-parts/content', get_post_type() );
+                get_template_part('template-parts/content', get_post_type());
 
-      endwhile;
+              endwhile;
 
-      the_posts_navigation();
+              the_posts_navigation();
 
-    else :
+            else :
 
-      get_template_part( 'template-parts/content', 'none' );
+              get_template_part('template-parts/content', 'none');
 
-    endif;
-    ?>
+            endif;
+            ?>
+          </div>
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        </div>
+      </div>
+    </section>
+
+
+
+  </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_sidebar();

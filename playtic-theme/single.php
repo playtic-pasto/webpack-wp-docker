@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package starter_theme
+ * @package playtic_theme
  */
 
 get_header();
