@@ -1,8 +1,8 @@
 
 body {
-  background-color: white;
+  background-color: purple;
   &.developmet-mode {
-    background-color: rgb(255, 208, 208);
+    background-color: rgba(255, 208, 208,0.5);
   };
 
   h1, h2 {

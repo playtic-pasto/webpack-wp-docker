@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   output: {
-    publicPath: '/wp-content/themes/starter_theme/dist/'
+    publicPath: '/wp-content/themes/playtic-theme/dist/'
   },
   module: {
     rules: [
@@ -17,5 +17,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })]
+  plugins: [new MiniCssExtractPlugin({ filename: '[name].min.css' })]
 };

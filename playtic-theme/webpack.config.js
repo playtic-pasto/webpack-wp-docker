@@ -12,8 +12,7 @@ module.exports = merge(
   {
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     entry: {
-      site: './src/js/site.js',
-      admin: './src/js/admin.js'
+      site: './src/js/main.js'
     },
     output: {
       filename: '[name].js',

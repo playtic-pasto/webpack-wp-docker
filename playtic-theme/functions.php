@@ -126,7 +126,7 @@ function starter_theme_scripts() {
     // wp_enqueue_script('starter_theme-admin-scripts-dev', 'http://localhost:8080/admin.js');
   } else {
     // load assets (prod)
-    wp_enqueue_style('starter_theme-style', get_template_directory_uri() . '/dist/site.css');
+    wp_enqueue_style('starter_theme-style', get_template_directory_uri() . '/dist/site.min.css');
     wp_enqueue_script('starter_theme-scripts', get_template_directory_uri() . '/dist/site.js');
     wp_enqueue_script('starter_theme-admin-scripts', get_template_directory_uri() . '/dist/admin.js');
   }
