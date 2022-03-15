@@ -9,7 +9,7 @@ services:
     restart: always
     volumes:
       - ./wp-app/:/var/www/html/ # Full wordpress project
-      - ./starter-theme/:/var/www/html/wp-content/themes/starter-theme # Theme development
+      - ./playtic-theme/:/var/www/html/wp-content/themes/playtic-theme # Theme development
       - ./src/plugins/:/var/www/html/wp-content/plugins
       - ./src/uploads/:/var/www/html/wp-content/uploads
     environment:
