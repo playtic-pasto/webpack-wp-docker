@@ -1,14 +1,51 @@
-$playtic_bg : #fff;
+@import "./../../node_modules/boxicons/css/boxicons.min.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-dosis;
+}
 
 body {
-  background-color: red;
+  background-color: $playtic_dark_blue;
+  position: relative;
+  min-height: 100vh;
   &.developmet-mode {
-    //$playtic_bg : rgb(15, 13, 27);
-    background-color: $playtic_bg;
+    background-color: $playtic_dark_blue;
   };
+}
 
-  h1, h2 {
-    color: green;
-    font-size: 53px;
+.site-main-content {
+  margin-left: 250px;
+  transition: .4s ease-in-out;
+  background-color: $playtic_dark_blue;
+  padding: 20px;
+  &.show-menu-primary {
+    margin-left: 80px;
+  }
+
+  .container-main-playtic {
+    background-color: $white;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    border-radius: 20px;
+  }
+
+  @media screen and ( max-width: 768px ) {
+    margin-left: 0;
+    margin-top: 70px;
+    &.show-menu-primary {
+      margin-left: 0;
+    }
+  }
+
+
+}
+
+.btn {
+  &:focus, &:active {
+    box-shadow: none;
   }
 }

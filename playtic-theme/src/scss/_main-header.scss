@@ -1,0 +1,357 @@
+.main-header-playtic {
+  background: rgb(184, 177, 184);
+  height: 100vh;
+  width: 250px;
+  border-bottom: 5px solid $playtic_ligth_blue;
+  background: $playtic_dark_blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .2s ease-in-out;
+  z-index: 1;
+  .wave {
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    top: 0;
+    left:0;
+    background: url('./../../public/img/wave_test.svg');
+    opacity: .03;
+    background-repeat: repeat-y;
+    background-size: contain;
+    &.wave-1 {
+      animation: wave-1 20s linear infinite;
+      animation-delay: 0s;
+      bottom: 0;
+      z-index: 0;
+      animation-direction: alternate;
+    }
+    &.wave-2 {    
+      animation: wave-2 30s linear infinite;
+      animation-delay: -5s;
+      bottom: 0px;
+      z-index: 0;
+      animation-direction: alternate;
+    }
+  }
+  @keyframes wave-1 {
+    0% { background-position-y: 0 ;}
+    50% { background-position-y: 100vh ;}
+    100% { background-position-y: 0vh ;}
+  }
+
+  @keyframes wave-2 {
+    0% { background-position-y: 0 ;}
+    50% { background-position-y: -100vh ;}
+    100% { background-position-y: 0vh ;}
+  }
+
+  .logo-content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .logo {
+      color: $white;
+      display: flex;
+      height: 50px;
+      width: 100%;
+      align-items: center;
+      opacity: 1;
+      visibility: visible;
+      transition: .3s ease-in-out;
+      .icon-top{
+        font-size: 2em;
+        margin-right: 12px;
+        margin-top: 2px;
+      }
+      .logo-name {
+        font-size: 25px;
+        font-family: $font_ubuntu;
+        line-height: 1;
+        margin: 0;
+      }
+    }
+    .btn-menu-show {
+      color: $white;
+      font-size: 2.2em;
+      cursor: pointer;
+      transition: .5s ease-in-out;
+      transform: rotateY(180deg);
+      &:hover {
+        color: $playtic_ligth_blue;
+      }
+    }
+  }
+
+  .nav-list-navigation {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    &.visible-scroll {
+      margin-bottom: 10px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    
+    /* width */
+    &::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: $playtic_dark_blue;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $playtic_blue; 
+      border-radius: 10px;
+      border: 4px solid $playtic_dark_blue;
+      &:hover {
+        background: $playtic_ligth_blue; 
+      }
+    }
+
+    .item-menu {
+      margin-bottom: 20px; 
+      border: none;
+      position: relative;
+      .item-link {
+        color: $white;
+        padding: 0.8em 1em;
+        display: block;
+        border-radius: 15px;
+        background: rgba($color: $playtic_ligth_blue, $alpha: 0.1);
+        transition: .6s ease-in-out;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 700;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .item-icon {
+          font-size: 18px;
+          margin-right: 15px;
+          transform: translateY(3px);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 90px;
+          width: 90px;
+          border-radius: 50%;
+          background-color: $playtic_blue;
+          z-index: -1;
+          top: 50%;
+          left: 0;
+          transform: translateX(-110%) translateY(-50%);
+          transition: transform .8s ease-in-out;
+        }
+        &:hover {
+          background: rgba($color: $white, $alpha: 1);
+          color: $black;
+          //transform: translateX(15px);
+          &::before {
+            transform: translateX(-50%) translateY(-50%);
+          }
+          .item-icon { 
+            color: $white;
+          }
+        }
+      }
+
+      &.item-search {
+        .frm-search-playtic {
+          border-radius: 12px;
+          border: none;
+          overflow: hidden;
+          .form-control {
+            border: none;
+            transition: .8s ease-in-out;
+            padding: 0.8em;
+            &:focus, &:active {
+              box-shadow: none;
+              border: none;
+              background: #d8eeff;
+            }
+          }
+          .btn-search-form {
+            background: $white;
+            transition: background .8s ease-in-out;
+            transition: padding .3s ease-in-out;
+            &:hover {
+              background: $playtic_blue;
+              color: $white;
+            }
+            i { 
+              font-size: 18px;
+              transform: translateY(3px);
+            }
+          }
+        }
+      }
+
+      .tooltip-menu-link {
+        position: absolute;
+        background: $white;
+        color: $black;
+        z-index: 150;
+        padding: .3em 1.5em;
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: .3);
+        top: 0%;
+        right: 0%;
+        transform: translateX(105%) translateY(-50%);
+        transition: .3s ease-in-out;
+        pointer-events: none;
+        opacity: 0;
+        width: max-content;
+      }
+
+    }
+  }
+
+  .profile-content {
+    width: calc( 100% + 3em);
+    background: rgba($color: $playtic_ligth_blue, $alpha: 0.1);
+    z-index: 100;
+    transform: translateX(-1.5em) translateY(1.5em);
+    z-index: 500;
+    padding: .7em;
+    .profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      .profile-details {
+        display: flex;
+        color: $white;
+        .profile-image {
+          border-radius: 5px;
+          margin-right: 8px;
+          width: 40px;
+          height: auto;
+          object-fit: cover;
+          object-position: center center;
+        }
+        .name {
+          font-size: 14px;
+          font-weight: 700;
+        }
+        .job {
+          font-size: 12px;
+          font-weight: 400;
+          color: rgba($color: $white, $alpha: 0.7);
+        }
+      }
+      .btn-logout-primary {
+        color: $white;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+        padding: 8px;
+        &:hover {
+          background: $playtic_dark_blue;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  /* ACtion For Show and Hide Sidebar Menu Primary */ 
+
+  &.active {
+    width: 80px;
+    padding: 1em;
+    .logo-content {
+      justify-content: center;
+      .logo {
+        display: none;
+      }
+      .btn-menu-show {
+        transform: rotateY(0deg);
+      }
+    }
+
+    .nav-list-navigation  {
+      @media screen and ( min-width: 768px ) {
+        &::-webkit-scrollbar {
+          width: 0px;
+        }
+      }
+
+      .item-menu {
+        .item-link  {
+          .item-title {
+            display: none;
+          }
+          &:hover { 
+            transform: translateX(0px);
+          }
+        }
+
+        &.item-search { 
+          .frm-search-playtic {
+            .form-control {
+              display: none;
+            }
+            .btn-search-form {
+              border-radius: 10px;
+              padding: 0.7em 0.9em;
+            }
+          }
+        }
+        &:hover {
+          .tooltip-menu-link {
+            transition: all .8s ease;
+            top: 50%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .profile-content {
+      .profile {
+        justify-content: center;
+        .profile-details {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and ( max-width: 768px ) {
+    height: 100%;
+    width: 100%;
+    padding-top: 10px;
+    overflow: visible;
+    &.active { 
+      height: 70px;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 10px;
+      .logo-content {
+        justify-content:space-between;
+        .logo {
+          display: flex;
+        }
+        .btn-menu-show {
+          transform: rotateY(0deg);
+        }
+      }
+    }
+  }
+}

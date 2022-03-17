@@ -118,7 +118,22 @@ function custom_dashboard_help() {
   get_template_part( 'template-parts/support-theme', 'content' );
 }
 
+// Deshabilitar la notificación de actualización de plugins
+
+function dcms_disable_plugin_update( $value ) {
+	if ( isset($value) && is_object($value) ) {
+		// Desactivamos las notificaciones del plugin ACF PRO
+		if ( isset( $value->response['advanced-custom-fields-pro/acf.php'] ) ) {
+			unset( $value->response['advanced-custom-fields-pro/acf.php'] );
+		}
+		
+	}
+	return $value;
+}
+
+
 add_action( 'after_setup_theme', 'playtic_theme_setup' );
 add_action( 'widgets_init', 'playtic_theme_widgets_init' );
 add_action( 'after_setup_theme', 'remove_core_updates');
 add_action( 'wp_dashboard_setup', 'playticm_dashboard_widgets');
+add_filter( 'site_transient_update_plugins', 'dcms_disable_plugin_update' );
