@@ -34,6 +34,16 @@ require get_template_directory() . '/includes/template-functions.php';
 require get_template_directory() . '/includes/customizer.php';
 
 /**
+ * Functions Return Menu Location WP in Array
+ */
+require get_template_directory() . '/includes/get_menu_array.php';
+
+/**
+ * Functions Return Breadcrumbs  WP 
+ */
+require get_template_directory() . '/includes/get_breadcrumbs.php';
+
+/**
  * Functions Suport ACF Global for Site
  */
 require get_template_directory() . '/includes/acf_options.php';

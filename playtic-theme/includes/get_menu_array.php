@@ -20,6 +20,8 @@
                     $children[$m->ID]['ID'] = $m->ID;
                     $children[$m->ID]['title'] = $m->title;
                     $children[$m->ID]['url'] = $m->url;
+                    $children[$m->ID]['icon'] = $m->post_excerpt;
+                    $children[$m->ID]['target'] = $m->target;
 
                     if(  $m->classes[0] == ""  || $m->classes == NULL   ) {
                       $children[$m->ID]['classes']  = NULL;
@@ -49,7 +51,8 @@
             $menu[$m->ID]['ID'] = $m->ID;
             $menu[$m->ID]['title'] = $m->title;
             $menu[$m->ID]['url'] = $m->url;
-
+            $menu[$m->ID]['icon'] = $m->post_excerpt;
+            $menu[$m->ID]['target'] = $m->target;
             if(  $m->classes[0] == ""  || $m->classes == NULL   ) {
               $menu[$m->ID]['classes']  = NULL;
             } 

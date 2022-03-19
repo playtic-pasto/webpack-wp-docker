@@ -16,6 +16,7 @@
           get_template_part( 'template-parts/main-footer', 'content' ); 
         }
       ?>
+      </div>  <!-- end Site Main Contentainer Main PlayTIC -->
     </div>  <!-- end Site Main Content Div -->
     <?php  wp_footer(); ?>
   </body> <!-- end Body -->
