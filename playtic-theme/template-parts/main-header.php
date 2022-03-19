@@ -16,7 +16,7 @@
     <i class='bx bx-menu-alt-left btn-menu-show' id="btn-primary-menu"></i>
   </div>
 
-  <ul class="nav-list-navigation <?= $visibleScroll ?>" role="navigation">
+  <ul class="nav-list-navigation <?= $visibleScroll ?>" role="menu" aria-label="Menu principal PlayTIC">
     <!-- FORM SEARCH FOR THEME -->
     <li class="item-menu item-search"  role="menuitem">
         <?php get_template_part('template-parts/layout/partial_form_search') ?>
@@ -30,9 +30,12 @@
           $targetItemMenu = $itemMenu['target'] == "" ? '_blank' : $itemMenu['target'];
     ?>
       <li class="item-menu item-<?= $key?> item-id-<?= $itemMenu['ID'] ?>" role="menuitem">
-        <a href="<?= $itemMenu['url'] ?>" class="item-link <?= $classItemMenu ?>" target="<?= $targetItemMenu ?>">
+        <a  href="<?= $itemMenu['url'] ?>" 
+            class="item-link <?= $classItemMenu ?>" 
+            target="<?= $targetItemMenu ?>"
+            aria-label="<?= $itemMenu['title'] ?>">
           <i class='item-icon <?= $itemMenu['icon'] ?>' ></i>
-          <span class="item-title"><?= $itemMenu['title'] ?></span>
+          <span class="item-title"  aria-label="<?= $itemMenu['title'] ?>"><?= $itemMenu['title'] ?></span>
         </a>
         <span class="tooltip-menu-link">
           <?= $itemMenu['title'] ?>
