@@ -8,29 +8,20 @@
 }
 
 body {
-  background-color: $playtic_dark_blue;
+  background-color: $white;
   position: relative;
   min-height: 100vh;
   &.developmet-mode {
-    background-color: $playtic_dark_blue;
+    background-color: $white;
   };
 }
 
 .site-main-content {
   margin-left: 250px;
   transition: .4s ease-in-out;
-  background-color: $playtic_dark_blue;
-  padding: 20px;
+  background-color: $white;
   &.show-menu-primary {
     margin-left: 80px;
-  }
-
-  .container-main-playtic {
-    background-color: $white;
-    width: 100%;
-    position: relative;
-    min-height: 100vh;
-    border-radius: 20px;
   }
 
   @media screen and ( max-width: 768px ) {
@@ -40,12 +31,14 @@ body {
       margin-left: 0;
     }
   }
-
-
 }
 
 .btn {
   &:focus, &:active {
     box-shadow: none;
   }
+}
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }

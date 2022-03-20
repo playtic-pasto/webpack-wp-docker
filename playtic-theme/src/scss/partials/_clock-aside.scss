@@ -1,0 +1,45 @@
+.container-clock-aside {
+  margin-bottom: 15px;
+  background: rgb(241, 237, 237);
+  padding: 1.2em;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px rgba($color: $black, $alpha: 0.3);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: 0;
+    top: 50%;
+    z-index: -1;
+    background-image: url('./../../public/img/clock-time-outline.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+    transform: translateX(33%) translateY(-50%);
+  }
+  .clock-timer {
+    margin-bottom: 5px;
+    color: $playtic_dark_blue;
+    font-size: 38px;
+    @media (max-width: 992px) { 
+      font-size: 32px;
+    }
+  }
+  .caption-text {
+    margin-bottom: 0;
+    position: relative;
+    .flag-col {
+      background: linear-gradient(180deg, rgba(227,255,0,1) 0%, rgba(227,255,0,1) 33%, rgba(1,96,255,1) 33%, rgba(1,96,255,1) 66%, rgba(255,0,0,1) 66%, rgba(255,0,0,1) 100%);
+      width: 23px;
+      height: 23px;
+      display: inline-block;
+      border-radius: 50%;
+      box-shadow: 2px 2px 4px rgba($color: $black, $alpha: 0.3);
+      margin-left: 7px;
+    }
+  }
+}

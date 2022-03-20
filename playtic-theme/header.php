@@ -38,4 +38,3 @@
   </header>
 
   <div id="site-main-content" class="site-main-content show-menu-primary">
-      <div class="container-main-playtic">
