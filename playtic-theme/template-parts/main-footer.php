@@ -1,13 +1,10 @@
 <?php
 /* FOOTER MAIN TEMPLATE */
 ?>
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quis vero odio nam fuga suscipit quasi libero impedit nesciunt unde, quae tempore earum culpa sed velit non quisquam fugiat eius.
-    </div>
-    <div class="col-6">
-      <h1>Footer</h1>
-    </div>
+<footer>
+  <div class="container-fluid">
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi iusto recusandae magnam ratione commodi, magni alias esse doloribus nobis iste exercitationem officia officiis debitis rem in doloremque error fugiat saepe!
+    </p>
   </div>
-</div>
+</footer>

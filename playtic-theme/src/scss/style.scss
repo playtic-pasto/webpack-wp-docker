@@ -1,6 +1,14 @@
 @import 'boostrap';
 @import 'variables';
-//Global
-@import 'main-header';
 //App Theme
 @import 'app';
+//Global
+@import 'main-header';
+//Partials
+@import 'partials/clock-widget-aside';
+@import 'partials/weekday-widget-aside';
+@import 'partials/task-widget-aside';
+//Components
+@import 'components/aside-tools-user';
+//Pages
+@import 'pages/front-page';

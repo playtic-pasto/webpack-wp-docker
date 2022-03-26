@@ -1,4 +1,3 @@
-console.log('Ready for Menu Primary');
 /* Se revisa las acciones para el Menu */
 
 const activateSidebarPlaytic = ( event, element ) => {
