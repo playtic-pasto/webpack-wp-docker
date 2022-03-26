@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+$font_ubuntu : 'Ubuntu',  Helvetica, sans-serif;
+$font_dosis : 'Dosis',  Helvetica, sans-serif;
+
+// Colors 
+$playtic_ligth_blue:#5AA8E6;
+$playtic_blue:      #018DFF;
+$playtic_secondary: #2368B5;
+$playtic_dark_blue: #030B1E;
+
+
+$white :#fff;
+$black :#000;
+
+h1, .title-h1, .tilte-primary {
+  font-family:  $font_ubuntu;
+  font-style:   normal;
+  font-weight:  bold;
+  font-size:    48px;
+  line-height:  120%;
+  @media (max-width: 992px) { 
+    font-size:    32px;
+    line-height:  120%;
+  }
+}
+
+h2, .title-h2, .title-secondary {
+  font-family:  $font_ubuntu;
+  font-style:   normal;
+  font-weight:  bold;
+  font-size:    32px;
+  line-height:  120%;
+  @media (max-width: 992px) { 
+    font-size:    28px;
+    line-height:  120%;
+  }
+}

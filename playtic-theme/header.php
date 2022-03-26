@@ -27,14 +27,14 @@
 
 <body <?php body_class(); ?> data-page-handle="<?php echo $_SERVER['REQUEST_URI']; ?>" >
 
-<header class="header-site">
-      <?php  
-      if( is_page_template( 'template-landing-page.php' ) ) {
+  <header class="header-site">
+    <?php  
+      if( is_page_template( 'template-landing-page.php' ) ): 
         get_template_part( 'template-parts/landing-page-header', 'content' );
-      } else {
+      else:
         get_template_part( 'template-parts/main-header', 'content' );
-      }
-      ?>
-    </header>
+      endif;
+    ?>
+  </header>
 
-  <div id="site-main-content" class="site-main-content">
+  <div id="site-main-content" class="site-main-content show-menu-primary">
