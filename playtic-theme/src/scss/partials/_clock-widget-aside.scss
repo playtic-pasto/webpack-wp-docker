@@ -1,11 +1,4 @@
 .container-clock-aside {
-  margin-bottom: 15px;
-  background: rgb(241, 237, 237);
-  padding: 1.2em;
-  border-radius: 20px;
-  box-shadow: 2px 2px 4px rgba($color: $black, $alpha: 0.3);
-  overflow: hidden;
-  position: relative;
   z-index: 0;
   &::after {
     content: "";

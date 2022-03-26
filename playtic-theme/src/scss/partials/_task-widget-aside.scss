@@ -1,0 +1,128 @@
+.container-tasklist-aside {
+  .title-task {
+    font-weight: 700;
+  }
+  .no-task-msg {
+    color: gray;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0px;
+    font-size: 15px;
+  }
+
+  .row-content-task {
+
+    .col-task-list {
+      .list-task-saved {
+        margin: 20px 0px;
+        padding: 0px 10px;
+        list-style: none;
+        max-height: 250px;
+        overflow-y: auto;
+        .item-list {
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: flex-end;
+          background: $white;
+          border-radius: 20px;
+          transition: 1s ease-in-out;
+          border: 1px solid $white;
+          &:hover {
+            background: rgb(224, 239, 248);
+            border: 1px solid #018DFF;
+          }
+          .task {
+            padding: 1em 5px;
+            p {
+              margin-bottom: 5px;
+              font-size: 16px;
+              text-align: right;
+            }
+            span {
+              color: $playtic_blue;
+              text-align: right;
+              font-size: 12px;
+              font-weight: 700;
+            }
+          }
+          .task-user {
+            padding: 5px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            img {
+              border-radius: 50%;
+              object-fit: cover;
+              object-position: center center; 
+              margin: 5px;
+              max-width: 30px;
+              height: auto;
+            }
+            button {
+              margin: 5px;
+              padding: .3em;
+              line-height: 1;
+              border-radius: 50%;
+              transition: .5s ease-out;
+              &.btn-completed-task {
+                &:hover {
+                  background: green;
+                  border-color: $white;
+                  i { color: $white ;}
+                }
+                &.disabled {
+                  &:hover {
+                    background: none;
+                    border-color: gray;
+                    i { color: gray ;}
+                  }
+                }
+              }
+              &.btn-delete-task {
+                &:hover {
+                  background: red;
+                  border-color: $white;
+                  i { color: $white ;}
+                }
+              }
+            }
+          }
+          &.completed {
+            background: lightgray;
+            .task {
+              p:first-child {
+                text-decoration: line-through;
+              }
+              span { color: gray;}
+            }
+            .task-user {
+              img {
+                filter: saturate(0);
+              }
+            }
+          }
+        }
+      }
+    }
+    .col-form-task {
+      .form-aside-task {
+        border-radius: 15px;
+        overflow: hidden;
+        .textarea-task {
+          border: none;
+        }
+        .btn-playtic-send {
+          background: $playtic_blue;
+          border: none;
+          i {
+            color: $white;
+          }
+          &:hover {
+            background: $playtic_dark_blue;
+          }
+        }
+      }
+    }
+  }
+}

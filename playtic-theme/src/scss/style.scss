@@ -5,7 +5,9 @@
 //Global
 @import 'main-header';
 //Partials
-@import 'partials/clock-aside';
+@import 'partials/clock-widget-aside';
+@import 'partials/weekday-widget-aside';
+@import 'partials/task-widget-aside';
 //Components
 @import 'components/aside-tools-user';
 //Pages

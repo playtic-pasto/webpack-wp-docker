@@ -21,5 +21,14 @@
     <div class="col-12 col-clock-aside">
       <?php get_template_part( 'template-parts/partials/clock-widget-aside', 'content' ); ?>
     </div>
+
+    <div class="col-12 col-weekdays-aside">
+      <?php get_template_part( 'template-parts/partials/weekday-widget-aside', 'content' ); ?>
+    </div>
+
+    <div class="col-12 col-tasklist-aside">
+      <?php get_template_part( 'template-parts/partials/tasklist-aside', 'content' ); ?>
+    </div>
+
   </div>
 </div>

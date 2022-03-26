@@ -35,4 +35,14 @@
       animation-duration: .8s;
     }
   }
+
+  .container-widget {
+    margin-bottom: 15px;
+    background: rgb(238, 238, 238);
+    padding: 1.2em;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba($color: $black, $alpha: 0.3);
+    overflow: hidden;
+    position: relative;
+  }
 }
